@@ -9,11 +9,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var tallyInt = 1
+    var tallyNum = 0
+    
+    @IBOutlet weak var tallyInterval: UILabel!
+    @IBOutlet weak var tallyCount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
+    
+    @IBAction func increaseButtonPressed(_ sender: UIButton) {
+        tallyInt += 1
+        tallyInterval.text = String(tallyInt)
+      
+    }
+    
+    @IBAction func decreaseButtonPressed(_ sender: UIButton) {
+        tallyInt -= 1
+        tallyInterval.text = String(tallyInt)
+    }
+    
+    @IBAction func updateTallyButtonPressed(_ sender: UIButton) {
+        tallyNum += tallyInt
+        tallyCount.text = String(tallyNum)
+    }
 }
 
